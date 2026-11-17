@@ -97,26 +97,30 @@ h3 { font-size: 21px; line-height: 1.35; letter-spacing: -.5px; }
 .hero-actions { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
 .hero-actions .button { font-size: 11px; padding: 16px 19px; gap: 16px; }
 .hero-actions .text-link { font-size: 11px; }
-.portfolio { padding-top: 22px; }
-.portfolio-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
-.portfolio .portfolio-heading h2 { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.5; letter-spacing: 0; }
-.portfolio-toggle { flex-shrink: 0; min-height: 44px; padding: 8px 12px; border: 1px solid #000; border-radius: 5px; background: #000; color: #fff; font-size: 11px; }
-.portfolio-toggle:hover { background: #222; }
-.portfolio-window { overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.portfolio { position: relative; margin-top: 24px; background: #fff; }
+.portfolio-heading { position: absolute; z-index: 1; top: 50%; right: 10px; transform: translateY(-50%); }
+.portfolio-toggle { display: grid; place-items: center; width: 44px; min-height: 44px; padding: 0; border: 1px solid #d5dad6; border-radius: 50%; background: #fff; color: #4b5563; font-size: 0; opacity: 0; box-shadow: 0 0 12px 8px #fff; transition: opacity .2s ease; }
+.portfolio-toggle::before { content: ""; width: 10px; height: 12px; border-inline: 3px solid currentColor; }
+.portfolio.is-paused .portfolio-toggle::before { width: 0; height: 0; border: 6px solid transparent; border-right: 0; border-left: 9px solid currentColor; }
+.portfolio:hover .portfolio-toggle, .portfolio:focus-within .portfolio-toggle { opacity: 1; }
+.portfolio-window { overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent); }
 .portfolio-track { display: flex; }
-.portfolio-group { display: grid; flex: 0 0 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 16px; min-width: 0; margin: 0; padding: 8px 0; list-style: none; }
+.portfolio-group { display: grid; flex: 0 0 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 16px; min-width: 0; margin: 0; padding: 12px 0; list-style: none; }
 .portfolio-group[aria-hidden="true"] { display: none; }
-.portfolio-logo { display: flex; align-items: center; justify-content: center; min-height: 88px; padding: 10px 8px; border-radius: 5px; }
-.portfolio-logo img { width: 100%; max-width: 180px; height: 68px; object-fit: contain; filter: grayscale(1); opacity: .55; transition: filter .2s ease, opacity .2s ease; }
+.portfolio-logo { display: flex; align-items: center; justify-content: center; min-height: 80px; padding: 10px 8px; border-radius: 5px; }
+.portfolio-logo img { width: 100%; max-width: 160px; height: 54px; object-fit: contain; filter: grayscale(1); opacity: .55; transition: filter .2s ease, opacity .2s ease; }
 .portfolio-logo:hover img, .portfolio-logo:focus-visible img { filter: grayscale(0); opacity: 1; }
 .portfolio-logo:focus-visible { outline-offset: -4px; }
 @keyframes portfolio-scroll { to { transform: translateX(-100%); } }
 @media screen and (prefers-reduced-motion: no-preference) {
-  .portfolio.is-ready .portfolio-group { min-width: 690px; animation: portfolio-scroll 34s linear infinite; }
+  .portfolio.is-ready .portfolio-group { flex-basis: 50%; min-width: 660px; animation: portfolio-scroll 34s linear infinite; }
   .portfolio.is-ready .portfolio-group[aria-hidden="true"] { display: grid; }
   .portfolio:hover .portfolio-group, .portfolio.is-paused .portfolio-group { animation-play-state: paused; }
-  .portfolio.is-ready .portfolio-window:focus-within .portfolio-group { min-width: 0; animation: none; }
+  .portfolio.is-ready .portfolio-window:focus-within .portfolio-group { flex-basis: 100%; min-width: 0; animation: none; }
   .portfolio.is-ready .portfolio-window:focus-within .portfolio-group[aria-hidden="true"] { display: none; }
+}
+@media (hover: none) {
+  .portfolio-toggle { opacity: 1; }
 }
 @media print, (prefers-reduced-motion: reduce) {
   .portfolio-toggle { display: none; }

@@ -312,15 +312,17 @@ carousel.querySelector(".carousel-controls").hidden = false;
 
 const portfolio = document.querySelector(".portfolio");
 const portfolioGroup = portfolio.querySelector(".portfolio-group");
-const portfolioCopy = portfolioGroup.cloneNode(true);
-portfolioCopy.setAttribute("aria-hidden", "true");
-portfolioCopy.querySelectorAll("a").forEach((link) => {
-  const logo = document.createElement("span");
-  logo.className = link.className;
-  logo.append(...link.childNodes);
-  link.replaceWith(logo);
-});
-portfolioGroup.after(portfolioCopy);
+for (let index = 0; index < 2; index++) {
+  const portfolioCopy = portfolioGroup.cloneNode(true);
+  portfolioCopy.setAttribute("aria-hidden", "true");
+  portfolioCopy.querySelectorAll("a").forEach((link) => {
+    const logo = document.createElement("span");
+    logo.className = link.className;
+    logo.append(...link.childNodes);
+    link.replaceWith(logo);
+  });
+  portfolioGroup.parentElement.append(portfolioCopy);
+}
 portfolio.classList.add("is-ready");
 const portfolioToggle = portfolio.querySelector(".portfolio-toggle");
 portfolioToggle.hidden = false;
