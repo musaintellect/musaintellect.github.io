@@ -2,8 +2,8 @@
 
 const portfolioTranslations = {
   pt: {
-    pageTitle: "Portfólio | Musaintellect",
-    pageDescription: "Portfólio da Musaintellect: dados de voz, recursos Português–Emakhuwa, pesquisa, trabalho de campo e produtos de software em Moçambique.",
+    pageTitle: "Musaintellect | Portfólio de Dados, Línguas e Software",
+    pageDescription: "Portfólio Musaintellect: dados de voz em Ekoti e Nyungwe, tradução Português–Emakhuwa, corpora linguísticos, pesquisa e software em Moçambique.",
     skip: "Saltar para o conteúdo",
     home: "Site principal",
     eyebrow: "MUSAINTELLECT / PORTFÓLIO",
@@ -68,8 +68,8 @@ const portfolioTranslations = {
     print: "Imprimir / Guardar PDF"
   },
   en: {
-    pageTitle: "Portfolio | Musaintellect",
-    pageDescription: "Musaintellect portfolio: voice data, Portuguese–Emakhuwa resources, research, fieldwork and software products in Mozambique.",
+    pageTitle: "Musaintellect | Data, Languages & Software Portfolio",
+    pageDescription: "Musaintellect portfolio: Ekoti and Nyungwe voice data, Portuguese–Emakhuwa translation, linguistic corpora, research and software in Mozambique.",
     skip: "Skip to content",
     home: "Main website",
     eyebrow: "MUSAINTELLECT / PORTFOLIO",
@@ -143,6 +143,17 @@ function setPortfolioLanguage(language, updateUrl = false) {
   document.querySelector('meta[name="description"]').content = text.pageDescription;
   document.querySelector('meta[property="og:title"]').content = text.pageTitle;
   document.querySelector('meta[property="og:description"]').content = text.pageDescription;
+  document.querySelector('meta[property="og:locale"]').content = language === "pt" ? "pt_MZ" : "en_US";
+  const canonicalUrl = `https://www.musaintellect.co.mz/portfolio.html${language === "en" ? "?lang=en" : ""}`;
+  document.querySelector('meta[property="og:url"]').content = canonicalUrl;
+  // Language variants share one HTML file; emit one canonical after selecting the language.
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.append(canonical);
+  }
+  canonical.href = canonicalUrl;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = text[element.dataset.i18n];
   });

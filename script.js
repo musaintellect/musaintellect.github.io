@@ -2,9 +2,9 @@
 
 const translations = {
   pt: {
-    pageTitle: "Musaintellect — Pesquisa, dados e software.",
-    pageDescription: "Musaintellect: pesquisa, ciência de dados, anotação, línguas moçambicanas e desenvolvimento de software. De Moçambique para o mundo.",
-    socialDescription: "Pesquisa, análise de dados e desenvolvimento de software em Moçambique.",
+    pageTitle: "Musaintellect | Pesquisa, IA e Software em Moçambique",
+    pageDescription: "Pesquisa científica, inteligência artificial, análise e anotação de dados, línguas moçambicanas e software. Musaintellect, em Marracuene, Maputo.",
+    socialDescription: "Pesquisa científica, inteligência artificial, dados, línguas moçambicanas e software. De Marracuene, Maputo, para o mundo.",
     skip: "Saltar para o conteúdo",
     navLabel: "Navegação principal",
     navServices: "Serviços",
@@ -19,7 +19,7 @@ const translations = {
     heroEyebrow: "MUSAINTELLECT · MOÇAMBIQUE",
     heroLine1: "Pesquisa, Ai",
     heroLine2: "e software.",
-    heroDescription: "Prestamos serviços de pesquisa científica, análise e anotação de dados, desenvolvimento de software e tradução em línguas moçambicanas.",
+    heroDescription: "Pesquisa científica, inteligência artificial, análise e anotação de dados, desenvolvimento de software e tradução em línguas moçambicanas. De Marracuene, Maputo, para o mundo.",
     heroCta: "Conheça os nossos serviços",
     heroSecondary: "Fale-nos do seu projecto",
     heroImageAlt: "Ilustração de programadores com camisolas da Musaintellect a ajudar uma comerciante de capulana e lenço a usar um tablet no mercado.",
@@ -141,9 +141,9 @@ const translations = {
     closeDialog: "Fechar"
   },
   en: {
-    pageTitle: "Musaintellect — Research, data and software.",
-    pageDescription: "Musaintellect: research, data science, annotation, Mozambican languages and software development. From Mozambique to the world.",
-    socialDescription: "Research, data analysis and software development in Mozambique.",
+    pageTitle: "Musaintellect | Research, AI & Software in Mozambique",
+    pageDescription: "Scientific research, artificial intelligence, data analysis and annotation, Mozambican language services and software. Musaintellect in Maputo, Mozambique.",
+    socialDescription: "Scientific research, artificial intelligence, data, Mozambican languages and software. From Marracuene, Maputo, to the world.",
     skip: "Skip to content",
     navLabel: "Main navigation",
     navServices: "Services",
@@ -158,7 +158,7 @@ const translations = {
     heroEyebrow: "MUSAINTELLECT · MOZAMBIQUE",
     heroLine1: "Research, AI",
     heroLine2: "and software.",
-    heroDescription: "We provide scientific research, data analysis and annotation, software development and translation in Mozambican languages.",
+    heroDescription: "Scientific research, artificial intelligence, data analysis and annotation, software development and translation in Mozambican languages. From Marracuene, Maputo, to the world.",
     heroCta: "View our services",
     heroSecondary: "Tell us about your project",
     heroImageAlt: "Illustration of developers in Musaintellect T-shirts helping a market trader in a capulana and headscarf use a tablet at her stall.",
@@ -360,6 +360,17 @@ function setLanguage(language, updateUrl = false) {
   document.querySelector('meta[name="description"]').content = text.pageDescription;
   document.querySelector('meta[property="og:title"]').content = text.pageTitle;
   document.querySelector('meta[property="og:description"]').content = text.socialDescription;
+  document.querySelector('meta[property="og:locale"]').content = language === "pt" ? "pt_MZ" : "en_US";
+  const canonicalUrl = `https://www.musaintellect.co.mz/${language === "en" ? "?lang=en" : ""}`;
+  document.querySelector('meta[property="og:url"]').content = canonicalUrl;
+  // Language variants share one HTML file; emit one canonical after selecting the language.
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.append(canonical);
+  }
+  canonical.href = canonicalUrl;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     element.textContent = text[element.dataset.i18n];
   });

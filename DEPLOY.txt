@@ -52,6 +52,24 @@ messages itself. The visitor must have an email application configured and
 must send the draft. The email link can also be copied into webmail.
 Provision the mailbox separately; publishing this website does not create it.
 
+SEARCH ENGINES
+Page titles, descriptions and visible service copy include relevant search
+terms in Portuguese and English. Organization, website and product details
+are described using JSON-LD. No meta keywords tag is used.
+robots.txt points crawlers to sitemap.xml, which lists the home page and
+portfolio in Portuguese and English. English URLs use ?lang=en and require
+JavaScript, like the existing language switch. Canonical URLs are emitted
+after selecting the language so they match the rendered content.
+The preferred domain is https://www.musaintellect.co.mz/. If it changes,
+update the absolute URLs in both HTML pages, both scripts, robots.txt and
+sitemap.xml together.
+
+After publishing, verify ownership in Google Search Console using its DNS
+TXT record. Submit sitemap.xml and use URL Inspection to request indexing
+of the home page and portfolio, including the English URLs. Search engines
+decide whether and when to index pages; visibility is not immediate or
+guaranteed.
+
 Only public business information is included. Personal identification,
 personal residence details, share capital, and personal document data from
 the company registration are intentionally not published.
