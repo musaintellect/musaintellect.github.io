@@ -1,0 +1,57 @@
+MUSAINTELLECT — STATIC WEBSITE
+
+No build, package installation, database, or API key is required.
+
+LOCAL PREVIEW
+Open index.html in your browser, or use any static HTTP server.
+Portuguese is the default language. Use ?lang=en for a direct English link
+or ?lang=pt for Portuguese. The language switch remembers the choice when
+local browser storage is available.
+
+GITHUB PAGES
+1. Create a GitHub repository and upload the contents of this folder.
+   Keep index.html at the repository root and include the assets folder
+   and .nojekyll file. Do not upload node_modules or local test artifacts.
+2. In the repository, open Settings > Pages.
+3. Under Build and deployment, choose Deploy from a branch.
+4. Choose your main branch and / (root), then Save.
+5. Wait for the Pages deployment to finish and open the published URL.
+
+All asset paths are relative, so both a personal GitHub Pages site and a
+project repository subpath are supported.
+
+The site does not set a custom domain automatically. Only add the domain
+musaintellect.co.mz in Pages settings once you control and configure its DNS.
+
+CONTENT AND CONTACT
+Edit Portuguese and English copy in script.js. The initial Portuguese
+content is also present in index.html for visitors without JavaScript.
+Presentation is in styles.css and chain-theme.css.
+
+APPEARANCE AND DENSITY
+The default appearance uses the logo's green, orange and yellow.
+There is no public theme selector. The previous base appearance is still
+available through ?theme=original; ?theme=chain selects the default.
+Explicit URL choices are remembered when local storage is available.
+URL options take precedence. Change
+data-default-theme in index.html to configure the default.
+
+The compact layout is enabled by default. Use ?density=comfortable for the
+more spacious layout, or set data-default-density="comfortable" in index.html.
+The static data-theme and data-density attributes should match the defaults
+so the same appearance is available before JavaScript loads or without it.
+
+The optional design is in chain-theme.css, scoped to data-theme="chain".
+It uses original CSS initially inspired by TemplateMo's Chain App Dev:
+https://templatemo.com/tm-570-chain-app-dev
+No template scripts, external fonts, Bootstrap, or remote assets are required.
+
+The public email is info@musaintellect.co.mz.
+The form opens a draft in the visitor's email application; it does not send
+messages itself. The visitor must have an email application configured and
+must send the draft. The email link can also be copied into webmail.
+Provision the mailbox separately; publishing this website does not create it.
+
+Only public business information is included. Personal identification,
+personal residence details, share capital, and personal document data from
+the company registration are intentionally not published.
