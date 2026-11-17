@@ -33,6 +33,8 @@ body.work-page .work-hero .button { border-color: #819f8a; }
 .work-case { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding-block: 28px; border-top: 1px solid var(--line); }
 .work-case-meta span { color: #176b30; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
 .work-case-meta p { margin: 8px 0 0; color: #526054; font-size: 12px; }
+.work-case-meta .work-case-client { margin-top: 12px; color: var(--ink); font-size: 13px; font-weight: 650; line-height: 1.4; }
+.work-project-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: #176b30; font-size: 13px; font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
 .work-case h3 { margin-bottom: 10px; font-size: 22px; }
 .work-case p { margin-bottom: 0; }
 .work-case ul { display: grid; gap: 5px; margin: 12px 0 0; padding-left: 18px; color: #425344; font-size: 14px; }
