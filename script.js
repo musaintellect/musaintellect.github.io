@@ -21,6 +21,7 @@ const translations = {
     heroDescription: "Prestamos serviços de pesquisa científica, análise e anotação de dados, desenvolvimento de software e tradução em línguas moçambicanas.",
     heroCta: "Conheça os nossos serviços",
     heroSecondary: "Fale-nos do seu projecto",
+    heroImageAlt: "Ilustração de programadores com camisolas da Musaintellect a ajudar uma comerciante de capulana e lenço a usar um tablet no mercado.",
     servicesEyebrow: "01 / SERVIÇOS",
     servicesTitle1: "Serviços para",
     servicesTitle2: "a sua organização.",
@@ -139,6 +140,7 @@ const translations = {
     heroDescription: "We provide scientific research, data analysis and annotation, software development and translation in Mozambican languages.",
     heroCta: "View our services",
     heroSecondary: "Tell us about your project",
+    heroImageAlt: "Illustration of developers in Musaintellect T-shirts helping a market trader in a capulana and headscarf use a tablet at her stall.",
     servicesEyebrow: "01 / SERVICES",
     servicesTitle1: "Services for",
     servicesTitle2: "your organisation.",
@@ -277,6 +279,9 @@ function setLanguage(language, updateUrl = false) {
   });
   document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
     element.setAttribute("aria-label", text[element.dataset.i18nAriaLabel]);
+  });
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    element.setAttribute("alt", text[element.dataset.i18nAlt]);
   });
   languageButtons.forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === language));

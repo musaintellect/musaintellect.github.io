@@ -28,18 +28,18 @@ html[data-theme="chain"] .language-switch button { color: #53617b; }
 html[data-theme="chain"] .menu-toggle { border-radius: 10px; }
 html[data-theme="chain"] .header-contact { font-size: 11px; padding-inline: 19px; }
 
-html[data-theme="chain"] .hero { isolation: isolate; min-height: 0; padding-block: 56px; gap: 0; border-bottom: 1px solid var(--line); }
+html[data-theme="chain"] .hero { isolation: isolate; min-height: 0; padding-block: 36px; gap: 32px; border: 0; }
 html[data-theme="chain"] .hero::before,
 html[data-theme="chain"] .hero::after { display: none; }
-html[data-theme="chain"] .hero-copy { color: var(--ink); padding-bottom: 0; animation: none; }
-html[data-theme="chain"] .hero .eyebrow { color: #196a2f; font-size: 10px; }
+html[data-theme="chain"] .hero-copy { color: #fff; padding-bottom: 0; animation: none; }
+html[data-theme="chain"] .hero .eyebrow { color: #bee7b4; font-size: 10px; }
 html[data-theme="chain"] .hero .status-dot { background: #87e8fa; box-shadow: 0 0 0 4px #ffffff18; }
 html[data-theme="chain"] .hero h1 { font-size: clamp(42px, 4.3vw, 63px); line-height: 1.12; font-weight: 780; letter-spacing: -2.6px; }
-html[data-theme="chain"] .hero h1 .serif-accent { color: #196a2f; font-weight: 780; font-size: 1em; letter-spacing: -2.6px; }
-html[data-theme="chain"] .hero-description { color: #53624a; font-size: 16px; line-height: 1.8; max-width: 700px; }
+html[data-theme="chain"] .hero h1 .serif-accent { color: #bee7b4; font-weight: 780; font-size: 1em; letter-spacing: -2.6px; }
+html[data-theme="chain"] .hero-description { color: #d2dfd3; font-size: 16px; line-height: 1.8; max-width: 700px; }
 html[data-theme="chain"] .hero .button { background: #ff4500; color: #101810; box-shadow: none; }
 html[data-theme="chain"] .hero .button:hover { background: #eaf7ff; }
-html[data-theme="chain"] .hero .text-link { color: #196a2f; }
+html[data-theme="chain"] .hero .text-link { color: #bee7b4; }
 html[data-theme="chain"] .hero-note { color: #f0f6ff; font-size: 11px; }
 html[data-theme="chain"] .mini-cross { color: #b8edff; }
 html[data-theme="chain"] .hero-art { width: 107%; margin-left: -3%; isolation: isolate; animation: chain-float 8s ease-in-out infinite; }
@@ -270,9 +270,9 @@ html[data-theme="chain"] .dialog-inner > p:not(.eyebrow) { color: #536480; }
 html[data-theme="chain"] ::selection { background: #e8ef9f; color: #19351c; }
 html[data-theme="chain"] .button { background: #000; color: #fff; border-radius: 6px; box-shadow: none; }
 html[data-theme="chain"] .button:hover { background: #222; box-shadow: 0 8px 20px #00000025; }
-html[data-theme="chain"] .hero .button { background: #000; color: #fff; }
+html[data-theme="chain"] .hero .button { background: #000; color: #fff; border-color: #819f8a; }
 html[data-theme="chain"] .hero .button:hover { background: #222; }
-html[data-theme="chain"] .hero h1 .serif-accent { color: #196a2f; }
+html[data-theme="chain"] .hero h1 .serif-accent { color: #bee7b4; }
 html[data-theme="chain"] .hero .status-dot,
 html[data-theme="chain"] .voice-header .status-dot { background: #ffff00; }
 html[data-theme="chain"] .mini-cross { color: #ffff00; }
@@ -290,7 +290,7 @@ html[data-theme="chain"] .faq-plus,
 html[data-theme="chain"] .contact-email,
 html[data-theme="chain"] .contact-email span,
 html[data-theme="chain"] .service-card:hover .card-arrow { color: #196a2f; }
-html[data-theme="chain"] .hero .eyebrow { color: #196a2f; }
+html[data-theme="chain"] .hero .eyebrow { color: #bee7b4; }
 html[data-theme="chain"] .light-link:hover { color: #0e4b25; }
 html[data-theme="chain"] .label-kicker,
 html[data-theme="chain"] .art-coordinate,
@@ -369,7 +369,7 @@ html[data-theme="chain"][data-density="compact"] .header-inner { height: 72px; }
 html[data-theme="chain"][data-density="compact"] .brand-logo { width: 176px; }
 html[data-theme="chain"][data-density="compact"] .section { padding-block: 56px; }
 html[data-theme="chain"][data-density="compact"] .eyebrow { margin-bottom: 14px; }
-html[data-theme="chain"][data-density="compact"] .hero { min-height: 0; padding-block: 40px; gap: 0; }
+html[data-theme="chain"][data-density="compact"] .hero { min-height: 0; padding-block: 32px; gap: 28px; }
 html[data-theme="chain"][data-density="compact"] .hero h1 { font-size: clamp(38px, 3.8vw, 52px); margin-bottom: 18px; }
 html[data-theme="chain"][data-density="compact"] .hero-description { margin-bottom: 20px; font-size: 15px; line-height: 1.8; }
 html[data-theme="chain"][data-density="compact"] .hero-note { margin-top: 20px; }
@@ -449,7 +449,7 @@ html[data-theme="chain"][data-density="compact"] .footer-bottom { padding-top: 1
   html[data-theme="chain"][data-density="compact"] .brand-logo { width: 154px; }
   html[data-theme="chain"][data-density="compact"] .site-header:has(.menu-toggle.is-ready) .main-nav { top: 64px; }
   html[data-theme="chain"][data-density="compact"] .section { padding-block: 38px; }
-  html[data-theme="chain"][data-density="compact"] .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-block: 28px 20px; gap: 38px; }
+  html[data-theme="chain"][data-density="compact"] .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding: 24px 20px; gap: 24px; }
   html[data-theme="chain"][data-density="compact"] .hero::before { display: none; }
   html[data-theme="chain"][data-density="compact"] .hero-copy { isolation: isolate; padding-bottom: 0; }
   html[data-theme="chain"][data-density="compact"] .hero-copy::before { display: none; }
@@ -504,7 +504,7 @@ html[data-theme="chain"][data-density="compact"] .footer-bottom { padding-top: 1
   html[data-theme="chain"] .hero .eyebrow,
   html[data-theme="chain"] .hero-note,
   html[data-theme="chain"] .hero .text-link { color: #17213a; }
-  html[data-theme="chain"] .hero { min-height: 0; padding-block: 25px; }
+  html[data-theme="chain"] .hero { min-height: 0; padding-block: 25px; background: white; }
   html[data-theme="chain"][data-density="compact"] .hero { min-height: 0; padding-block: 25px; }
   html[data-theme="chain"] .service-card,
   html[data-theme="chain"] .process-step,
