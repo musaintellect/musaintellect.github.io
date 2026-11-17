@@ -1,9 +1,9 @@
-MUSAINTELLECT — STATIC WEBSITE
+MUSAINTELLECT — WEBSITE
 
 No build, package installation, database, or API key is required.
 
 LOCAL PREVIEW
-Open index.html in your browser, or use any static HTTP server.
+Open index.html in your browser, or use any HTTP server.
 Portuguese is the default language. Use ?lang=en for a direct English link
 or ?lang=pt for Portuguese. The language switch remembers the choice when
 local browser storage is available.
@@ -38,7 +38,7 @@ data-default-theme in index.html to configure the default.
 
 The compact layout is enabled by default. Use ?density=comfortable for the
 more spacious layout, or set data-default-density="comfortable" in index.html.
-The static data-theme and data-density attributes should match the defaults
+The HTML data-theme and data-density attributes should match the defaults
 so the same appearance is available before JavaScript loads or without it.
 
 The optional design is in chain-theme.css, scoped to data-theme="chain".

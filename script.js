@@ -135,7 +135,7 @@ const translations = {
     backTop: "De volta ao topo",
     privacyLink: "Privacidade",
     privacyTitle: "A sua privacidade.",
-    privacyBody1: "Este site estático não utiliza cookies, ferramentas de análise, fontes externas ou formulários com armazenamento num servidor. As suas preferências de idioma e visual podem ser guardadas apenas no armazenamento local do seu navegador.",
+    privacyBody1: "Este website não utiliza cookies, ferramentas de análise, fontes externas ou formulários com armazenamento num servidor. As suas preferências de idioma e visual podem ser guardadas apenas no armazenamento local do seu navegador.",
     privacyBody2: "O formulário de contacto abre a sua aplicação de email. Os dados só são enviados se decidir enviar esse email, através do seu fornecedor de correio. Para questões sobre o tratamento de correspondência, contacte info@musaintellect.co.mz.",
     privacyBody3: "O fornecedor de alojamento pode processar dados técnicos de acesso, como o endereço IP, de acordo com a sua própria política de privacidade.",
     closeDialog: "Fechar"
@@ -274,7 +274,7 @@ const translations = {
     backTop: "Back to top",
     privacyLink: "Privacy",
     privacyTitle: "Your privacy.",
-    privacyBody1: "This static website does not use cookies, analytics, external fonts or server-stored forms. Your language and appearance preferences may be saved only in your browser's local storage.",
+    privacyBody1: "This website does not use cookies, analytics, external fonts or server-stored forms. Your language and appearance preferences may be saved only in your browser's local storage.",
     privacyBody2: "The contact form opens your email app. Your details are only sent if you choose to send that email, through your email provider. For questions about the handling of correspondence, contact info@musaintellect.co.mz.",
     privacyBody3: "The hosting provider may process technical access data, such as your IP address, under its own privacy policy.",
     closeDialog: "Close"
