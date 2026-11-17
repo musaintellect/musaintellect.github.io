@@ -78,6 +78,8 @@ h3 { font-size: 21px; line-height: 1.35; letter-spacing: -.5px; }
 .hero-slide figcaption { display: flex; align-items: center; min-height: 108px; padding: 14px 18px; }
 .hero-slide-link { display: block; color: #fff; }
 .hero-slide-link > span { display: block; margin-bottom: 5px; color: #bee7b4; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+.hero-slide-link > .hero-slide-brand { display: flex; align-items: center; gap: 6px; }
+.carousel-brand-mark { display: block; width: 18px; height: 18px; padding: 1px; border-radius: 2px; background: #fff; object-fit: contain; }
 .hero-slide-link strong { display: block; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.4; }
 .carousel-controls { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
 .carousel-choices { display: flex; flex: 1; justify-content: center; gap: 8px; }
@@ -208,6 +210,7 @@ h3 { font-size: 21px; line-height: 1.35; letter-spacing: -.5px; }
 .product-visual-label { color: #235778; font-size: 8px; letter-spacing: 1.5px; }
 .product-brand { display: flex; align-items: center; justify-content: center; gap: 16px; margin-block: 24px; }
 .product-logo { display: block; width: clamp(80px, 8vw, 112px); height: auto; flex-shrink: 0; }
+.product-logo.product-logo-wordmark { width: min(100%, 340px); flex-shrink: 1; }
 .product-brand strong { color: #103b5b; font-size: clamp(28px, 3.4vw, 48px); font-weight: 750; letter-spacing: -1.5px; line-height: 1; }
 .product-visual-footer { display: flex; justify-content: space-between; align-items: center; color: #235778; font: 10px monospace; }
 .product-visual-footer > span:last-child { font-size: 24px; }
