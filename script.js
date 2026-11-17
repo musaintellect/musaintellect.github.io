@@ -30,6 +30,9 @@ const translations = {
     carouselPrevious: "Produto anterior",
     carouselNext: "Produto seguinte",
     carouselChoose: "Escolher produto",
+    portfolioTitle: "Experiência e colaboração",
+    portfolioPause: "Pausar movimento",
+    portfolioResume: "Retomar movimento",
     estivaImageAlt: "Uma cliente e um motorista a trocar documentos junto de um camião num porto em Moçambique.",
     servicesEyebrow: "01 / SERVIÇOS",
     servicesTitle1: "Serviços para",
@@ -162,6 +165,9 @@ const translations = {
     carouselPrevious: "Previous product",
     carouselNext: "Next product",
     carouselChoose: "Choose a product",
+    portfolioTitle: "Experience and collaboration",
+    portfolioPause: "Pause movement",
+    portfolioResume: "Resume movement",
     estivaImageAlt: "A customer and a driver exchanging documents beside a truck at a port in Mozambique.",
     servicesEyebrow: "01 / SERVICES",
     servicesTitle1: "Services for",
@@ -303,6 +309,26 @@ carousel.querySelector(".carousel-controls").addEventListener("keydown", (event)
   carouselChoices[currentSlide].focus();
 });
 carousel.querySelector(".carousel-controls").hidden = false;
+
+const portfolio = document.querySelector(".portfolio");
+const portfolioGroup = portfolio.querySelector(".portfolio-group");
+const portfolioCopy = portfolioGroup.cloneNode(true);
+portfolioCopy.setAttribute("aria-hidden", "true");
+portfolioCopy.querySelectorAll("a").forEach((link) => {
+  const logo = document.createElement("span");
+  logo.className = link.className;
+  logo.append(...link.childNodes);
+  link.replaceWith(logo);
+});
+portfolioGroup.after(portfolioCopy);
+portfolio.classList.add("is-ready");
+const portfolioToggle = portfolio.querySelector(".portfolio-toggle");
+portfolioToggle.hidden = false;
+portfolioToggle.addEventListener("click", () => {
+  const paused = portfolio.classList.toggle("is-paused");
+  portfolioToggle.dataset.i18n = paused ? "portfolioResume" : "portfolioPause";
+  portfolioToggle.textContent = translations[currentLanguage][portfolioToggle.dataset.i18n];
+});
 
 function updateMenuLabel() {
   const key = menuButton.getAttribute("aria-expanded") === "true" ? "menuClose" : "menuOpen";
