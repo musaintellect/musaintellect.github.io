@@ -268,10 +268,10 @@ html[data-theme="chain"] .dialog-inner > p:not(.eyebrow) { color: #536480; }
   html[data-theme="chain"] .contact-form { padding: 22px; }
 }
 html[data-theme="chain"] ::selection { background: #e8ef9f; color: #19351c; }
-html[data-theme="chain"] .button { background: #ff4500; color: #101810; border-radius: 6px; box-shadow: none; }
-html[data-theme="chain"] .button:hover { background: #ff641c; box-shadow: 0 8px 20px #67431925; }
-html[data-theme="chain"] .hero .button { background: #ff4500; color: #101810; }
-html[data-theme="chain"] .hero .button:hover { background: #ff641c; }
+html[data-theme="chain"] .button { background: #000; color: #fff; border-radius: 6px; box-shadow: none; }
+html[data-theme="chain"] .button:hover { background: #222; box-shadow: 0 8px 20px #00000025; }
+html[data-theme="chain"] .hero .button { background: #000; color: #fff; }
+html[data-theme="chain"] .hero .button:hover { background: #222; }
 html[data-theme="chain"] .hero h1 .serif-accent { color: #196a2f; }
 html[data-theme="chain"] .hero .status-dot,
 html[data-theme="chain"] .voice-header .status-dot { background: #ffff00; }
