@@ -52,7 +52,26 @@
           <a class="text-link" href="#contact"><span data-i18n="heroSecondary">Fale-nos do seu projecto</span><span aria-hidden="true">→</span></a>
         </div>
       </div>
-      <img class="hero-photo" src="./assets/community-market.jpg" srcset="./assets/community-market-small.jpg 768w, ./assets/community-market.jpg 1280w" sizes="(max-width: 720px) calc(100vw - 80px), (max-width: 1150px) 45vw, 600px" width="1280" height="720" alt="Ilustração de programadores com camisolas da Musaintellect a ajudar uma comerciante de capulana e lenço a usar um tablet no mercado." data-i18n-alt="heroImageAlt" fetchpriority="high" decoding="async">
+      <section class="hero-carousel" aria-label="Produtos em destaque" data-i18n-aria-label="carouselLabel">
+        <div class="hero-slides" id="hero-slides" aria-live="polite" aria-atomic="true">
+          <figure class="hero-slide" aria-label="CATfrica · 1 de 2" data-i18n-aria-label="carouselCatfricaSlide">
+            <img class="hero-photo" src="./assets/community-market.jpg" srcset="./assets/community-market-small.jpg 768w, ./assets/community-market.jpg 1280w" sizes="(max-width: 720px) calc(100vw - 80px), (max-width: 1150px) 45vw, 600px" width="1280" height="720" alt="Ilustração de programadores com camisolas da Musaintellect a ajudar uma comerciante de capulana e lenço a usar um tablet no mercado." data-i18n-alt="heroImageAlt" fetchpriority="high" decoding="async">
+            <figcaption><a class="hero-slide-link" href="#catfrica-product"><span>CATfrica</span><strong data-i18n="carouselCatfricaCaption">Dar voz às línguas moçambicanas no espaço digital.</strong></a></figcaption>
+          </figure>
+          <figure class="hero-slide" aria-label="Estiva · 2 de 2" data-i18n-aria-label="carouselEstivaSlide" hidden>
+            <img class="hero-photo" src="./assets/estiva-transport.webp" srcset="./assets/estiva-transport-small.webp 720w, ./assets/estiva-transport.webp 1280w" sizes="(max-width: 720px) calc(100vw - 80px), (max-width: 1150px) 45vw, 600px" width="1280" height="853" alt="Uma cliente e um motorista a trocar documentos junto de um camião num porto em Moçambique." data-i18n-alt="estivaImageAlt" decoding="async">
+            <figcaption><a class="hero-slide-link" href="#estiva-product"><span>Estiva</span><strong data-i18n="carouselEstivaCaption">Transporte carga em Moçambique com confiança</strong></a></figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls" hidden>
+          <button class="carousel-previous" type="button" aria-controls="hero-slides" aria-label="Produto anterior" data-i18n-aria-label="carouselPrevious"><span aria-hidden="true">←</span></button>
+          <div class="carousel-choices" role="group" aria-label="Escolher produto" data-i18n-aria-label="carouselChoose">
+            <button type="button" data-carousel-slide="0" aria-controls="hero-slides" aria-pressed="true">CATfrica</button>
+            <button type="button" data-carousel-slide="1" aria-controls="hero-slides" aria-pressed="false">Estiva</button>
+          </div>
+          <button class="carousel-next" type="button" aria-controls="hero-slides" aria-label="Produto seguinte" data-i18n-aria-label="carouselNext"><span aria-hidden="true">→</span></button>
+        </div>
+      </section>
     </section>
 
     <section class="section container" id="services" aria-labelledby="services-title">
@@ -132,10 +151,10 @@
     </section>
 
     <section class="section container product-section" id="products" aria-labelledby="products-title">
-      <div class="product-feature">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="productEyebrow">05 / OS NOSSOS PRODUTOS</p><h2 id="products-title" data-i18n="productsTitle">Os nossos produtos.</h2></div></div>
+      <div class="product-feature" id="catfrica-product">
         <div class="product-copy">
-          <p class="eyebrow" data-i18n="productEyebrow">05 / OS NOSSOS PRODUTOS</p>
-          <h2 id="products-title" data-i18n="productTitle">Conheça a Catfrica.</h2>
+          <h3 id="catfrica-title" data-i18n="productTitle">Conheça a Catfrica.</h3>
           <p class="product-description" data-i18n="productDescription">A Catfrica é um produto desenvolvido pela Musaintellect. Visite o site para conhecer o projecto.</p>
           <a class="button" href="https://www.catfrica.com/" target="_blank" rel="noopener noreferrer"><span><span data-i18n="productCta">Visitar a Catfrica</span><span class="sr-only" data-i18n="newTab"> (abre num novo separador)</span></span><span aria-hidden="true">↗</span></a>
         </div>
@@ -143,6 +162,18 @@
           <span class="product-visual-label" data-i18n="productLabel">UM PRODUTO MUSAINTELLECT</span>
           <div class="product-brand"><img class="product-logo" src="./assets/catfrica-logo.png" width="462" height="481" alt="CATfrica" loading="lazy" decoding="async"><strong aria-hidden="true">CATfrica</strong></div>
           <div class="product-visual-footer"><span>www.catfrica.com</span><span aria-hidden="true">↗</span></div>
+        </div>
+      </div>
+      <div class="product-feature" id="estiva-product">
+        <div class="product-copy">
+          <h3 id="estiva-title" data-i18n="estivaTitle">Conheça a Estiva.</h3>
+          <p class="product-description" data-i18n="estivaDescription">A Estiva liga clientes e transportadores em Moçambique. Publique cargas e receba propostas de transporte num só lugar.</p>
+          <a class="button" href="https://mozlink.vercel.app/" target="_blank" rel="noopener noreferrer"><span><span data-i18n="estivaCta">Visitar a Estiva</span><span class="sr-only" data-i18n="newTab"> (abre num novo separador)</span></span><span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="product-visual">
+          <span class="product-visual-label" data-i18n="productLabel">UM PRODUTO MUSAINTELLECT</span>
+          <div class="product-brand"><img class="product-logo" src="./assets/estiva-logo.webp" width="512" height="768" alt="Estiva" loading="lazy" decoding="async"><strong aria-hidden="true">Estiva</strong></div>
+          <div class="product-visual-footer"><span>mozlink.vercel.app</span><span aria-hidden="true">↗</span></div>
         </div>
       </div>
     </section>

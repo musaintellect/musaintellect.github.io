@@ -410,7 +410,7 @@ html[data-theme="chain"][data-density="compact"] .about-facts { margin-top: 18px
 html[data-theme="chain"][data-density="compact"] .about-facts > div { padding: 10px 15px; }
 html[data-theme="chain"][data-density="compact"] .product-section { padding-bottom: 0; }
 html[data-theme="chain"][data-density="compact"] .product-copy { padding: 28px; }
-html[data-theme="chain"][data-density="compact"] .product-copy h2 { font-size: 34px; }
+html[data-theme="chain"][data-density="compact"] .product-copy h3 { font-size: 34px; }
 html[data-theme="chain"][data-density="compact"] .product-description { margin-block: 16px 20px; line-height: 1.8; }
 html[data-theme="chain"][data-density="compact"] .product-visual { padding: 24px; }
 html[data-theme="chain"][data-density="compact"] .product-brand { margin-block: 18px; }
@@ -471,7 +471,7 @@ html[data-theme="chain"][data-density="compact"] .footer-bottom { padding-top: 1
   html[data-theme="chain"][data-density="compact"] .about-layout { gap: 26px; }
   html[data-theme="chain"][data-density="compact"] .product-section { padding-bottom: 0; }
   html[data-theme="chain"][data-density="compact"] .product-copy { padding: 24px; }
-  html[data-theme="chain"][data-density="compact"] .product-copy h2 { font-size: 30px; }
+  html[data-theme="chain"][data-density="compact"] .product-copy h3 { font-size: 30px; }
   html[data-theme="chain"][data-density="compact"] .product-visual { min-height: 170px; }
   html[data-theme="chain"][data-density="compact"] .product-brand { margin-block: 14px; }
   html[data-theme="chain"][data-density="compact"] .faq-section { gap: 20px; }

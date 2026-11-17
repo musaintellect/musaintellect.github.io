@@ -22,6 +22,15 @@ const translations = {
     heroCta: "Conheça os nossos serviços",
     heroSecondary: "Fale-nos do seu projecto",
     heroImageAlt: "Ilustração de programadores com camisolas da Musaintellect a ajudar uma comerciante de capulana e lenço a usar um tablet no mercado.",
+    carouselLabel: "Produtos em destaque",
+    carouselCatfricaSlide: "CATfrica · 1 de 2",
+    carouselEstivaSlide: "Estiva · 2 de 2",
+    carouselCatfricaCaption: "Dar voz às línguas moçambicanas no espaço digital.",
+    carouselEstivaCaption: "Transporte carga em Moçambique com confiança",
+    carouselPrevious: "Produto anterior",
+    carouselNext: "Produto seguinte",
+    carouselChoose: "Escolher produto",
+    estivaImageAlt: "Uma cliente e um motorista a trocar documentos junto de um camião num porto em Moçambique.",
     servicesEyebrow: "01 / SERVIÇOS",
     servicesTitle1: "Serviços para",
     servicesTitle2: "a sua organização.",
@@ -77,10 +86,14 @@ const translations = {
     aboutFact2Value: "Moçambique",
     aboutFact2: "Sede em Marracuene, província de Maputo.",
     productEyebrow: "05 / OS NOSSOS PRODUTOS",
+    productsTitle: "Os nossos produtos.",
     productTitle: "Conheça a Catfrica.",
     productDescription: "A Catfrica é um produto desenvolvido pela Musaintellect. Visite o site para conhecer o projecto.",
     productCta: "Visitar a Catfrica",
     productLabel: "UM PRODUTO MUSAINTELLECT",
+    estivaTitle: "Conheça a Estiva.",
+    estivaDescription: "A Estiva liga clientes e transportadores em Moçambique. Publique cargas e receba propostas de transporte num só lugar.",
+    estivaCta: "Visitar a Estiva",
     newTab: " (abre num novo separador)",
     faqEyebrow: "BOM SABER",
     faqTitle: "Vamos esclarecer.",
@@ -141,6 +154,15 @@ const translations = {
     heroCta: "View our services",
     heroSecondary: "Tell us about your project",
     heroImageAlt: "Illustration of developers in Musaintellect T-shirts helping a market trader in a capulana and headscarf use a tablet at her stall.",
+    carouselLabel: "Featured products",
+    carouselCatfricaSlide: "CATfrica · 1 of 2",
+    carouselEstivaSlide: "Estiva · 2 of 2",
+    carouselCatfricaCaption: "Bringing Mozambican languages into the digital space.",
+    carouselEstivaCaption: "Transport cargo across Mozambique with confidence",
+    carouselPrevious: "Previous product",
+    carouselNext: "Next product",
+    carouselChoose: "Choose a product",
+    estivaImageAlt: "A customer and a driver exchanging documents beside a truck at a port in Mozambique.",
     servicesEyebrow: "01 / SERVICES",
     servicesTitle1: "Services for",
     servicesTitle2: "your organisation.",
@@ -196,10 +218,14 @@ const translations = {
     aboutFact2Value: "Mozambique",
     aboutFact2: "Based in Marracuene, Maputo province.",
     productEyebrow: "05 / OUR PRODUCTS",
+    productsTitle: "Our products.",
     productTitle: "Meet Catfrica.",
     productDescription: "Catfrica is a product developed by Musaintellect. Visit the website to learn about the project.",
     productCta: "Visit Catfrica",
     productLabel: "A MUSAINTELLECT PRODUCT",
+    estivaTitle: "Meet Estiva.",
+    estivaDescription: "Estiva connects shippers and carriers in Mozambique. Post loads and receive transport offers in one place.",
+    estivaCta: "Visit Estiva",
     newTab: " (opens in a new tab)",
     faqEyebrow: "GOOD TO KNOW",
     faqTitle: "A little clarity.",
@@ -246,10 +272,37 @@ const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".main-nav");
 const filters = document.querySelectorAll("[data-filter]");
 const serviceCards = document.querySelectorAll(".service-card");
+const carousel = document.querySelector(".hero-carousel");
+const carouselSlides = Array.from(carousel.querySelectorAll(".hero-slide"));
+const carouselChoices = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+let currentSlide = 0;
 const form = document.querySelector(".contact-form");
 const formStatus = document.querySelector("#form-status");
 let currentLanguage = "pt";
 let draftRequested = false;
+
+function showCarouselSlide(index) {
+  currentSlide = (index + carouselSlides.length) % carouselSlides.length;
+  carouselSlides.forEach((slide, slideIndex) => {
+    slide.hidden = slideIndex !== currentSlide;
+  });
+  carouselChoices.forEach((button, slideIndex) => {
+    button.setAttribute("aria-pressed", String(slideIndex === currentSlide));
+  });
+}
+
+carouselChoices.forEach((button) => {
+  button.addEventListener("click", () => showCarouselSlide(Number(button.dataset.carouselSlide)));
+});
+carousel.querySelector(".carousel-previous").addEventListener("click", () => showCarouselSlide(currentSlide - 1));
+carousel.querySelector(".carousel-next").addEventListener("click", () => showCarouselSlide(currentSlide + 1));
+carousel.querySelector(".carousel-controls").addEventListener("keydown", (event) => {
+  if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  event.preventDefault();
+  showCarouselSlide(currentSlide + (event.key === "ArrowRight" ? 1 : -1));
+  carouselChoices[currentSlide].focus();
+});
+carousel.querySelector(".carousel-controls").hidden = false;
 
 function updateMenuLabel() {
   const key = menuButton.getAttribute("aria-expanded") === "true" ? "menuClose" : "menuOpen";
