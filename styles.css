@@ -98,8 +98,9 @@ h3 { font-size: 21px; line-height: 1.35; letter-spacing: -.5px; }
 .hero-actions .button { font-size: 11px; padding: 16px 19px; gap: 16px; }
 .hero-actions .text-link { font-size: 11px; }
 .portfolio { position: relative; margin-top: 24px; background: #fff; }
-.portfolio-heading { position: absolute; z-index: 1; top: 50%; right: 10px; transform: translateY(-50%); }
-.portfolio-toggle { display: grid; place-items: center; width: 44px; min-height: 44px; padding: 0; border: 1px solid #d5dad6; border-radius: 50%; background: #fff; color: #4b5563; font-size: 0; opacity: 0; box-shadow: 0 0 12px 8px #fff; transition: opacity .2s ease; }
+.portfolio-heading { position: relative; display: flex; align-items: center; justify-content: center; min-height: 44px; margin-bottom: 8px; padding-inline: 64px; text-align: center; }
+.portfolio .portfolio-heading h2 { margin: 0; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.4; letter-spacing: 0; }
+.portfolio-toggle { position: absolute; z-index: 1; top: 0; right: 10px; display: grid; place-items: center; width: 44px; min-height: 44px; padding: 0; border: 1px solid #d5dad6; border-radius: 50%; background: #fff; color: #4b5563; font-size: 0; opacity: 0; box-shadow: 0 0 12px 8px #fff; transition: opacity .2s ease; }
 .portfolio-toggle::before { content: ""; width: 10px; height: 12px; border-inline: 3px solid currentColor; }
 .portfolio.is-paused .portfolio-toggle::before { width: 0; height: 0; border: 6px solid transparent; border-right: 0; border-left: 9px solid currentColor; }
 .portfolio:hover .portfolio-toggle, .portfolio:focus-within .portfolio-toggle { opacity: 1; }
