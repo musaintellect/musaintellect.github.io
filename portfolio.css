@@ -44,6 +44,7 @@ body.work-page .work-hero .button { border-color: #819f8a; }
 .work-catfrica-mark { width: 76px; height: 80px; object-fit: contain; }
 .work-product-visual strong { font-size: 30px; letter-spacing: -1px; }
 .work-estiva-logo { width: min(100%, 240px); height: auto; }
+.work-ntxuva-logo { width: min(100%, 180px); height: auto; border-radius: 8px; }
 .work-product-copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 24px; }
 .work-product-copy h3 { margin-bottom: 10px; color: #123b56; }
 .work-product-copy p { min-height: 74px; margin-bottom: 20px; color: #32536a; font-size: 14px; }
