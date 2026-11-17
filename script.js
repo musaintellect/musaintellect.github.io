@@ -12,6 +12,7 @@ const translations = {
     navApproach: "Como trabalhamos",
     navAbout: "Sobre nós",
     navProducts: "Produtos",
+    navPortfolio: "Portfólio",
     navContact: "Vamos conversar",
     menuOpen: "Abrir menu",
     menuClose: "Fechar menu",
@@ -96,7 +97,7 @@ const translations = {
     productLabel: "UM PRODUTO MUSAINTELLECT",
     estivaTitle: "Conheça a Estiva.",
     estivaDescription: "A Estiva liga clientes e transportadores em Moçambique. Publique cargas e receba propostas de transporte num só lugar.",
-    estivaCta: "Visitar a Estiva",
+    estivaCta: "Solicitar demonstração",
     newTab: " (abre num novo separador)",
     faqEyebrow: "BOM SABER",
     faqTitle: "Vamos esclarecer.",
@@ -147,6 +148,7 @@ const translations = {
     navApproach: "Our approach",
     navAbout: "About us",
     navProducts: "Products",
+    navPortfolio: "Portfolio",
     navContact: "Let's talk",
     menuOpen: "Open menu",
     menuClose: "Close menu",
@@ -231,7 +233,7 @@ const translations = {
     productLabel: "A MUSAINTELLECT PRODUCT",
     estivaTitle: "Meet Estiva.",
     estivaDescription: "Estiva connects shippers and carriers in Mozambique. Post loads and receive transport offers in one place.",
-    estivaCta: "Visit Estiva",
+    estivaCta: "Request demo",
     newTab: " (opens in a new tab)",
     faqEyebrow: "GOOD TO KNOW",
     faqTitle: "A little clarity.",
@@ -366,6 +368,9 @@ function setLanguage(language, updateUrl = false) {
   });
   languageButtons.forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.language === language));
+  });
+  document.querySelectorAll("[data-portfolio-link]").forEach((link) => {
+    link.setAttribute("href", `./portfolio.html?lang=${language}`);
   });
   updateMenuLabel();
   updateFilterStatus();
